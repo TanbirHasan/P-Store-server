@@ -1,25 +1,27 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const dotenv = require("dotenv").config();
-
-const app = require("./app");
-
-// data base connection
-
-async function dbConncet() {
-  try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/test");
-    console.log("Database is connected")
-  } catch (err) {
-    console.log(err);
-  }
-}
-dbConncet();
-
-// server
+const dotenv = require('dotenv').config();
 
 const port = process.env.PORT || 8000;
 
-app.listen(port, () => {
-  console.log(`App is running on port ${port}`);
-});
+
+const app = require('./app');
+
+
+
+// const start = async () => {
+//   conn
+// }
+
+// const start = async () => {
+// 	try {
+// 		await connectDB('mongodb://127.0.0.1:27017/test');
+// 		app.listen(PORT, () => {
+// 			console.log(`${PORT} is connected`);
+// 		});
+// 	} catch (error) {
+// 		console.log(error);
+// 	}
+// };
+// start();
+
