@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 8000;
 
 const mongoose = require('mongoose');
 const connectDB = require('./DB/connectDB');
-const dotenv =  require("dotenv").config()
+const dotenv = require('dotenv').config();
 
 // middlewares
 
@@ -15,6 +15,10 @@ app.use(cors());
 app.get('/', (req, res) => {
 	res.send('Route is working');
 });
+
+// middleware to set router
+
+app.use('/api/v1/usersBasicInfo', require('./routes/userBasicInfo'));
 
 
 // Start Server and Connect to DB
@@ -30,6 +34,5 @@ const start = async () => {
 	}
 };
 start();
-
 
 module.exports = app;
