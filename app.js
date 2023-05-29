@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 8000;
 
 const mongoose = require('mongoose');
 const connectDB = require('./DB/connectDB');
+const dotenv =  require("dotenv").config()
 
 // middlewares
 
@@ -20,7 +21,7 @@ app.get('/', (req, res) => {
 
 const start = async () => {
 	try {
-		await connectDB('mongodb://127.0.0.1:27017/test');
+		await connectDB(process.env.DATABASE);
 		app.listen(PORT, () => {
 			console.log(`App is running on port ${PORT}`);
 		});
@@ -29,5 +30,6 @@ const start = async () => {
 	}
 };
 start();
+
 
 module.exports = app;
