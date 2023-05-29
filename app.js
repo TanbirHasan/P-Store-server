@@ -19,7 +19,8 @@ app.get('/', (req, res) => {
 // middleware to set router
 
 app.use('/api/v1/usersBasicInfo', require('./routes/userBasicInfo'));
-
+app.use('/api/v1/usersEducationInfo', require('./routes/userEducationInfo'));
+app.use('/api/v1/userSkills', require('./routes/userSkills'));
 
 // Start Server and Connect to DB
 

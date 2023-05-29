@@ -3,7 +3,7 @@ const BasicUserInfo = require('../models/userBasicInfo');
 const addUserBasicInfo = async (req, res) => {
 	try {
 		const info = req.body;
-		const result = BasicUserInfo.create(info);
+		const result = await BasicUserInfo.create(info);
 		res.send({ status: 'success', result });
 	} catch (error) {
 		console.log(error);

@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 const userEducationInfo = new mongoose.Schema(
 	{
+		userEmail: {
+			default: 'sajid@gmail.com',
+			type: String,
+		},
 		instituteName: {
 			type: String,
 			required: true,
@@ -16,7 +20,7 @@ const userEducationInfo = new mongoose.Schema(
 		},
 		grade: {
 			type: String,
-			required: true,
+			// required: true,
 		},
 		startDate: {
 			type: String,
@@ -30,4 +34,4 @@ const userEducationInfo = new mongoose.Schema(
 	{ timestamps: true }
 );
 
-module.exports = mongoose.model('User_EducationInfo', userEducationInfo);
+module.exports = mongoose.model('User_Education_Info', userEducationInfo);
