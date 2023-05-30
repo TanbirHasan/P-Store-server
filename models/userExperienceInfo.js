@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 const userExperienceInfo = new mongoose.Schema(
 	{
+		userEmail: {
+			default: 'sajid@gmail.com',
+			type: String,
+		},
 		position: {
 			type: String,
 			required: true,
@@ -28,14 +32,18 @@ const userExperienceInfo = new mongoose.Schema(
 		},
 		endDate: {
 			type: String,
-			required: true,
+			// required: true,
 		},
 		description: {
 			type: String,
+			required: true,
+		},
+		showEndDate: {
+			type: Boolean,
 			required: true,
 		},
 	},
 	{ timestamps: true }
 );
 
-module.exports = mongoose.model('user_ExperienceInfo', userExperienceInfo);
+module.exports = mongoose.model('user_experience_info', userExperienceInfo);

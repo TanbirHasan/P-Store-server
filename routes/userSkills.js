@@ -3,7 +3,7 @@ const { addUserSkills, getUserSkills } = require('../controllers/userSkills');
 
 const router = express.Router();
 
-router.post('/', addUserSkills);
+router.put('/:email', addUserSkills);
 router.get('/:email', getUserSkills);
 
 module.exports = router;

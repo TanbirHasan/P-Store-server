@@ -2,8 +2,11 @@ const UserSkills = require('../models/usersSkills');
 
 const addUserSkills = async (req, res) => {
 	try {
+		const email = req.params.email;
 		const skills = req.body;
-		const result = await UserSkills.create(skills);
+		const filter = { userEmail: email };
+		const options = { upsert: true };
+		const result = await UserSkills.updateOne(filter, skills, options);
 		res.send({ status: 'success', result });
 	} catch (error) {
 		console.log(error);
@@ -23,6 +26,6 @@ const getUserSkills = async (req, res) => {
 };
 
 module.exports = {
-    addUserSkills,
-    getUserSkills
+	addUserSkills,
+	getUserSkills,
 };
