@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 8000;
 
 const mongoose = require('mongoose');
 const connectDB = require('./DB/connectDB');
-const dotenv =  require("dotenv").config()
+const dotenv = require('dotenv').config();
 
 // middlewares
 
@@ -16,6 +16,12 @@ app.get('/', (req, res) => {
 	res.send('Route is working');
 });
 
+// middleware to set router
+
+app.use('/api/v1/usersBasicInfo', require('./routes/userBasicInfo'));
+app.use('/api/v1/usersEducationInfo', require('./routes/userEducationInfo'));
+app.use('/api/v1/userSkills', require('./routes/userSkills'));
+app.use('/api/v1/userExperienceInfo', require('./routes/userExperienceInfo'));
 
 // Start Server and Connect to DB
 
@@ -30,6 +36,5 @@ const start = async () => {
 	}
 };
 start();
-
 
 module.exports = app;
