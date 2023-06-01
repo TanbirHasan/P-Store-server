@@ -10,10 +10,10 @@ const userBasicInfo = new mongoose.Schema(
 		email: {
 			type: String,
 			required: true,
-			unique: true,
+			// unique: true,
 		},
 		image: {
-			type: [String],
+			type: Array,
 			required: true,
 		},
 		address: {
@@ -45,19 +45,19 @@ const userBasicInfo = new mongoose.Schema(
 			// required:true,
 		},
 		isLinkedinActive: {
-			type: Boolean,
+			type: String,
 			// required:true,
 		},
 		isFacebookActive: {
-			type: Boolean,
+			type: String,
 			// required:true,
 		},
 		isSkypeActive: {
-			type: Boolean,
+			type: String,
 			// required:true,
 		},
 		isYoutubeActive: {
-			type: Boolean,
+			type: String,
 			// required:true,
 		},
 	},
@@ -65,4 +65,4 @@ const userBasicInfo = new mongoose.Schema(
 );
 
 //Export the model
-module.exports = mongoose.model('User_BasicInfo', userBasicInfo);
+module.exports = mongoose.model('User_Basic_Info', userBasicInfo);

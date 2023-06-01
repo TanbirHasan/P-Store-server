@@ -18,4 +18,4 @@ const userTestimonialInfo = new mongoose.Schema(
 	{ timestamps: true }
 );
 
-module.exports = mongoose.model('user_TestimonialInfo', userTestimonialInfo);
+module.exports = mongoose.model('User_Testimonial_Info', userTestimonialInfo);
