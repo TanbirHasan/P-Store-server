@@ -7,12 +7,16 @@ const mongoose = require('mongoose');
 const connectDB = require('./DB/connectDB');
 const dotenv =  require("dotenv").config()
 const registerRoutes = require('./routes/register')
-const loginRoutes = require('./routes/login')
+const loginRoutes = require('./routes/login');
+const corsOptions = require('./config/corsOptions');
+const credentials = require('./middelwares/credentials');
+
 
 // middlewares
 
 app.use(express.json());
-app.use(cors());
+app.use(credentials);
+app.use(cors(corsOptions));
 
 
 // routes
