@@ -9,7 +9,7 @@ const dotenv =  require("dotenv").config()
 const registerRoutes = require('./routes/register')
 const loginRoutes = require('./routes/login');
 const corsOptions = require('./config/corsOptions');
-const credentials = require('./middelwares/credentials');
+const credentials = require('./middlewares/credentials');
 
 
 // middlewares
