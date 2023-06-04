@@ -3,7 +3,7 @@ const { default: mongoose } = require('mongoose');
 const userSkill = new mongoose.Schema(
 	{
 		userEmail: {
-			default: 'sajid@gmail.com',
+			required: true,
 			type: String,
 		},
 		skills: {

@@ -3,7 +3,7 @@ const { default: mongoose } = require('mongoose');
 const userTestimonialInfo = new mongoose.Schema(
 	{
 		userEmail: {
-			default: 'sajid@gmail.com',
+			required: true,
 			type: String,
 		},
 		recommenderName: {

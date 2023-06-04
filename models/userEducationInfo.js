@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const userEducationInfo = new mongoose.Schema(
 	{
 		userEmail: {
-			default: 'sajid@gmail.com',
+			required: true,
 			type: String,
 		},
 		instituteName: {

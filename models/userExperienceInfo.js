@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const userExperienceInfo = new mongoose.Schema(
 	{
 		userEmail: {
-			default: 'sajid@gmail.com',
+			required: true,
 			type: String,
 		},
 		position: {
