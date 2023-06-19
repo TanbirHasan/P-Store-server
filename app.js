@@ -9,7 +9,7 @@ const dotenv =  require("dotenv").config()
 const registerRoutes = require('./routes/register')
 const loginRoutes = require('./routes/login');
 const corsOptions = require('./config/corsOptions');
-const credentials = require('./middelwares/credentials');
+const credentials = require('./middlewares/credentials');
 
 
 // middlewares
@@ -35,6 +35,7 @@ app.use('/api/v1/usersBasicInfo', require('./routes/userBasicInfo'));
 app.use('/api/v1/usersEducationInfo', require('./routes/userEducationInfo'));
 app.use('/api/v1/userSkills', require('./routes/userSkills'));
 app.use('/api/v1/userExperienceInfo', require('./routes/userExperienceInfo'));
+app.use('/api/v1/userTestimonialInfo', require('./routes/userTestimonialInfo'));
 
 // Start Server and Connect to DB
 

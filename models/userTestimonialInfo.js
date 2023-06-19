@@ -2,6 +2,10 @@ const { default: mongoose } = require('mongoose');
 
 const userTestimonialInfo = new mongoose.Schema(
 	{
+		userEmail: {
+			required: true,
+			type: String,
+		},
 		recommenderName: {
 			type: String,
 			required: true,
